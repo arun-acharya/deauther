@@ -13,7 +13,6 @@ class script:
 	os.system("ifconfig "+ interface + " down")
         os.system("airmon-ng start " + interface)
 	os.system("airmon-ng check kill")
-	interface = interface+'mon'
 	print 'Monitor mode Enabled !'
         time.sleep(1)
         print '>>>Scanning...'
