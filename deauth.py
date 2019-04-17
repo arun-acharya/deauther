@@ -8,7 +8,8 @@ time.sleep(1)
 interface = interface+'mon'
 
 class script:
-    def attack(self):       
+    def attack(self):
+	global interface       
 	os.system("ifconfig "+ interface + " down")
         os.system("airmon-ng start " + interface)
 	os.system("airmon-ng check kill")
