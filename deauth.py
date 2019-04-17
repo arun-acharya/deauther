@@ -23,6 +23,8 @@ class script:
 
     def attack(self):       
         print '>>>Enabling monitor mode on {0}'.format(interface)
+	os.system("ifconfig "+ interface + "down")
+	os.system("airmon-ng check kill")
         os.system("airmon-ng start " + interface)
         print '[+] monitor mode enabled for {0}'.format(interface)
         print '>>>Spoofing mon0...'
