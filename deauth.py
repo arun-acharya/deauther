@@ -5,13 +5,14 @@ print '\n Select your wireless interface to continue ... '
 interface = raw_input("Interface: ")
 print '\n The Interface set to {0}!'.format(interface)
 time.sleep(1)
-interface = interface+'mon'
+
 
 class script:
     def attack(self):
 	global interface       
 	os.system("ifconfig "+ interface + " down")
         os.system("airmon-ng start " + interface)
+	time.sleep(3)
 	os.system("airmon-ng check kill")
 	print 'Monitor mode Enabled !'
         time.sleep(1)
